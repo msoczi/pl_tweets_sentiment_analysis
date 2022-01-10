@@ -29,6 +29,7 @@ Then built 3 models:
 * logistic regression
 * naive bayes
 * kNN
+
 The last step was evaluation with ROC curves and confusion matrixes.
 
 ## CNN model
