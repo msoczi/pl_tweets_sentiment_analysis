@@ -3,12 +3,12 @@
 The aim of the project was to create a sentiment analyzer for polarization of society in Poland on the basis of COVID-19 tweets.
 
 The project was created in several steps. Each of them was implemented in a separate script (the numbers refer to the order of execution):
-* 0_tweets_download
-* 1_labeling_tweets
-* 2_data_preprocesing
-* 3_tweets_ML
-* 4_tweets_CNN
-* 5_tweets_BERT
+* <a href="/0_tweets_download.ipynb">0_tweets_download</a>
+* <a href="/1_labeling_tweets.ipynb">1_labeling_tweets</a>
+* <a href="/2_data_preprocesing.ipynb">2_data_preprocesing</a>
+* <a href="/3_tweets_ML.ipynb">3_tweets_ML</a>
+* <a href="/4_tweets_CNN.ipynb">4_tweets_CNN</a>
+* <a href="/5_tweets_BERT.ipynb">5_tweets_BERT</a>
 
 ## Data
 The first step was to obtain the data. About 500k polish tweets about COVID-19 have been collected. Tweets were collected using the `tweepy` API based on their ID. Tweet IDs were downloaded from the website https://zenodo.org/record/5090588#.YZDZdmDMKUn.
@@ -21,7 +21,7 @@ However, we assume that after using word embeddings, tokens with a similar senti
 The sentiment for tweets was determined on the basis of the average value of the sentiments of individual tokens in the tweet.
 
 ## Preprocessing
-The next step was to prepare the data after appropriately tagging it in the previous step. The methods used are similar to those in notebook *1_labeling_tweets*, but with some differences (e.g. no lemmatization was used). The result of this step was the prepared data for modeling.
+The next step was to prepare the data after appropriately tagging it in the previous step. The methods used are similar to those in notebook <a href="/1_labeling_tweets.ipynb">1_labeling_tweets</a>, but with some differences (e.g. no lemmatization was used). The result of this step was the prepared data for modeling.
 
 ## Classic ML models
 After cleaning text, some duplicates appeared. We removed them. Then, with RegexpTokenizer from nltk module, we made tokenization. In the next step, we converted text to vectors using CountVectorizer from sklearn.<br>
@@ -33,7 +33,7 @@ The last step was evaluation with ROC curves and confusion matrixes.
 
 ## CNN model
 The CNN model was also built as an alternative to the classical methods. We used keras and tensorflow.
-In the next step we created tokenizer with max_words = 5000 (max_words is the maximum words in vocabulary) and used pad_sequence for padding to length=200.<br>
+In the next step we created tokenizer with `max_words = 5000` (max_words is the maximum words in vocabulary) and used pad_sequence for padding to `length=200`.<br>
 After train-test split (the same seed like in previous script with classic ML) we created CNN model for sentiment classification. Then evaluated with ROC and confusion matrix.
 
 ## BERT model
